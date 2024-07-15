@@ -1,25 +1,10 @@
 {
-    "page": {
-        "id": 960,
-        "title": "Backend-разработчик (Дзен)",
-        "direction": "Разработка",
-        "city": "Москва, СПб",
-        "workFormat": "Комбинированный",
-        "busyness": "40 часов в неделю",
-        "aboutTasksText": [
-            "Реализация системы автоматического администрирования кластеров баз данных.",
-            "Исследование внутреннего устройства различных баз данных (postgresql, mongodb, redis, clickhouse, zookeeper) и обеспечение их отказоустойчивости.",
-            "Разработка инфраструктуры для снятия бэкапов баз.",
-            "Обеспечение бесперебойной работы существующих кластеров.",
-            "Написание кода, который влияет на все бизнес-юниты компании."
-        ],
-        "aboutSkillsText": [
-            "Уверенное написание кода на java и python.",
-            "Понимание строения баз данных: rdbms, nosql.",
-            "Желание создавать общую инфраструктуры для всей компании.",
-            "Опыт или желание работать с высоконагруженными системами."
-        ],
-        "link": "https://internship.vk.company/_next/data/1.5.20/vacancy/960.json?id=960",
-        "chapter": "Стажировка"
-    }
+    "pageProps": {
+        "page": {},
+        "user": {},
+        "responseStatus": 404,
+        "_sentryTraceData": "4f1ea5508de241b899ace50235ad8324-a401bacad1a598cf-0",
+        "_sentryBaggage": "sentry-environment=careerhub_prod_serverside,sentry-release=1.5.20,sentry-public_key=92b9ee07598343c0aca4ab9dfa267abb,sentry-trace_id=4f1ea5508de241b899ace50235ad8324,sentry-transaction=%2Fvacancy%2F%5Bid%5D,sentry-sampled=false"
+    },
+    "__N_SSP": true
 }
