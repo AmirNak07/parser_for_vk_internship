@@ -15,12 +15,26 @@ class Page:
         except KeyError:
             print("Invalid json")
 
+    @staticmethod
+    def is_active(request):
+        if request["pageProps"]["page"]["vacancy"]["status"] == "o":
+            return True
+        elif request["pageProps"]["page"]["vacancy"]["status"] == "c":
+            return False
+
+    @staticmethod
+    def internship_or_vacancy(request):
+        if request["pageProps"]["page"]["vacancy"]["internship_type"] == "internship":
+            return "Стажировка"
+        else:
+            return "Вакансия"
+
     def good_request(self):
         req = requests.get(
             f"https://internship.vk.company/_next/data/1.5.20/vacancy/{self.id}.json?id={self.id}").text
         vk_response = json.loads(req)
 
-        if not self.check_404(vk_response):
+        if not self.check_404(vk_response) and self.is_active(vk_response):
             good_response = {
                 vk_response["pageProps"]["page"]["vacancy"]["id"]: {
                     "page": {
@@ -33,7 +47,7 @@ class Page:
                         "aboutTasksText": vk_response["pageProps"]["page"]["vacancy"]["landing"]["aboutTasksText"]["items"],
                         "aboutSkillsText": vk_response["pageProps"]["page"]["vacancy"]["landing"]["aboutSkillsText"]["items"],
                         "link": f"https://internship.vk.company/_next/data/1.5.20/vacancy/{self.id}.json?id={self.id}",
-                        "chapter": "Стажировка" if "стажировка" in str(vk_response) else "Вакансия"
+                        "chapter": self.internship_or_vacancy(vk_response)
                     }
                 }
             }
